@@ -1,0 +1,126 @@
+
+.nav-links a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: 500;
+    position: relative;
+    transition: 0.3s;
+}
+
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    width: 0%;
+    height: 2px;
+    bottom: -4px;
+    left: 0;
+    background-color: #5865f2;
+    transition: 0.3s;
+}
+
+.nav-links a:hover::after {
+    width: 100%;
+}
+
+/* Hero Section */
+.hero {
+    text-align: center;
+    padding: 160px 20px;
+    animation: fadeIn 1s ease forwards;
+}
+
+.hero h1 {
+    font-size: 64px;
+    font-weight: 800;
+    background: linear-gradient(90deg, #5865F2, #6A0DAD);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 20px;
+    opacity: 0.85;
+    margin-bottom: 40px;
+}
+
+.buttons button {
+    padding: 14px 36px;
+    margin: 10px;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+    border: none;
+}
+
+button.primary {
+    background: #5865F2;
+    color: #fff;
+    box-shadow: 0 4px 20px rgba(88,101,242,0.4);
+}
+
+button.primary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 30px rgba(88,101,242,0.6);
+}
+
+button.secondary {
+    background: rgba(255,255,255,0.1);
+    color: #fff;
+    border: 1px solid #fff;
+}
+
+button.secondary:hover {
+    background: rgba(255,255,255,0.2);
+    transform: translateY(-3px);
+}
+
+/* Features Section */
+.features {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    padding: 80px 40px;
+    flex-wrap: wrap;
+}
+
+.feature {
+    background: rgba(15, 23, 42, 0.7);
+    backdrop-filter: blur(8px);
+    padding: 30px;
+    border-radius: 16px;
+    width: 280px;
+    text-align: center;
+    transition: 0.3s;
+}
+
+.feature:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 25px rgba(88,101,242,0.4);
+}
+
+.feature h2 {
+    font-size: 22px;
+    margin-bottom: 12px;
+    color: #fff;
+}
+
+.feature p {
+    opacity: 0.8;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 40px;
+    opacity: 0.6;
+    border-top: 1px solid rgba(255,255,255,0.1);
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {opacity: 0; transform: translateY(20px);}
+    to {opacity: 1; transform: translateY(0);}
+}
