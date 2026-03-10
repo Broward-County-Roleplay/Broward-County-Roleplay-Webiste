@@ -8,7 +8,7 @@ app.use(express.json())
 
 const DISCORD_WEBHOOK = "https://discord.com/api/webhooks/1480620136984612946/oaGqGMRLSlGOJlYJ9Rn9zja1wfVJQKh-O-wP56zwQVJI4eWpnZKslG-8iQze50404k2k"
 
-let playerCount = 0 // 👈 Track player count
+let playerCount = 0
 
 app.get("/", (req, res) => {
     res.json({ status: "API Online", service: "Broward County Roleplay" })
@@ -24,7 +24,7 @@ app.post("/api/roblox", async (req, res) => {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({
-                content: `🟢 **${data.username}** joined! | 👥 Players online: **${playerCount}**`
+                content: ` **${data.username}** joined! |  Players online: **${playerCount}**`
             })
         })
     }
@@ -35,7 +35,7 @@ app.post("/api/roblox", async (req, res) => {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({
-                content: `🔴 **${data.username}** left! | 👥 Players online: **${playerCount}**`
+                content: ` **${data.username}** left! |  Players online: **${playerCount}**`
             })
         })
     }
@@ -43,13 +43,13 @@ app.post("/api/roblox", async (req, res) => {
     res.json({ success: true })
 })
 
-// Post player count every 5 minutes
+
 setInterval(async () => {
     await fetch(DISCORD_WEBHOOK, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
-            content: `📊 **Live Player Count:** ${playerCount} players currently in Broward County Roleplay`
+            content: ` **Live Player Count:** ${playerCount} players currently in Broward County Roleplay`
         })
     })
 }, 5 * 60 * 1000)
